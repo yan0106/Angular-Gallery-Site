@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  anio: number = new Date().getFullYear(); // creo una propiedad en la clase que se llama anio
+
 }
