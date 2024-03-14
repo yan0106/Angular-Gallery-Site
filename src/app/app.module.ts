@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+
 // Rutas
 import { AppRoutingModule } from './app-routing.module';
 
@@ -20,11 +22,12 @@ import { ItemComponent } from './pages/item/item.component';
     AboutComponent,
     ItemComponent
   ],
-  imports: [ // para los modules
+  imports: [ // para los modulos
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule // para realizar peticiones put, get, delete, entre otras, a servidores rest
   ],
-  providers: [],
+  providers: [], // usualmente los servicios se colocaban acá pero A en el mismo servicio, ya dice dónde lo inyecta. Ya no es necesario.
   bootstrap: [AppComponent]
 })
 export class AppModule { }
