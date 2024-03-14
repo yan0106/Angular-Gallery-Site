@@ -12,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})], // Usamos hash para desplegar en GitHub Pages. Se utiliza cuando no tenemos acceso al htaccess del servidor.
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
