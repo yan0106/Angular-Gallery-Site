@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// Rutas
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -10,7 +12,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
 
 @NgModule({
-  declarations: [
+  declarations: [ //para los Pipes, Components, entre otros
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -18,7 +20,7 @@ import { ItemComponent } from './pages/item/item.component';
     AboutComponent,
     ItemComponent
   ],
-  imports: [
+  imports: [ // para los modules
     BrowserModule,
     AppRoutingModule
   ],
