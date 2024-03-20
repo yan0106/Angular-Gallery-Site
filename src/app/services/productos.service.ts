@@ -25,6 +25,10 @@ export class ProductosService {
       this.productos = resp;
       this.cargando = false;
 
+     /* setTimeout(() => {
+        this.cargando = false;
+      }, 2000);*/ //Este código es para verificar que esté funcionando el Loading..
+
     });
   }
 
