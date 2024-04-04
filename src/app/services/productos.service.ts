@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Producto} from '../interfaces/producto.interface'
+import { Producto } from '../interfaces/producto.interface'
+import { ProductoDescripcion } from '../interfaces/producto-descripcion.interface'
 
 @Injectable({
   providedIn: 'root'
@@ -20,16 +21,18 @@ export class ProductosService {
 
     this.http.get<Producto[]>('https://angular-gallery-site-default-rtdb.firebaseio.com/productos_idx.json')
       .subscribe((resp: Producto[]) => {
-
-      console.log(resp);
       this.productos = resp;
       this.cargando = false;
-
      /* setTimeout(() => {
         this.cargando = false;
       }, 2000);*/ //Este código es para verificar que esté funcionando el Loading..
-
     });
+  }
+
+  getProducto(id: string){
+
+   return this.http.get<ProductoDescripcion>(`https://angular-gallery-site-default-rtdb.firebaseio.com/productos/${ id }.json`)
+
   }
 
 }
