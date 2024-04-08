@@ -10,8 +10,14 @@ import { ProductoDescripcion } from '../../interfaces/producto-descripcion.inter
 })
 export class ItemComponent {
 
+  producto: ProductoDescripcion;
+  id: string = '';
+
   constructor ( private route: ActivatedRoute,
-                public productoService: ProductosService){}
+                public productoService: ProductosService) {
+
+                  this.producto = {} as ProductoDescripcion;
+                }
 
   ngOnInit(){
 
@@ -22,7 +28,10 @@ export class ItemComponent {
       this.productoService.getProducto(parametros['id'])
       .subscribe((producto: ProductoDescripcion) => {
 
+          this.id = parametros ['id'];
+          this.producto = producto;
           console.log(producto);
+
         })
     })
   }
