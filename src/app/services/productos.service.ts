@@ -10,6 +10,7 @@ export class ProductosService {
 
   cargando = true;
   productos: Producto[] = [];
+  productosFiltrado: Producto [] = [];
 
   constructor( private http: HttpClient) {
 
@@ -32,6 +33,17 @@ export class ProductosService {
   getProducto(id: string){
 
    return this.http.get<ProductoDescripcion>(`https://angular-gallery-site-default-rtdb.firebaseio.com/productos/${ id }.json`)
+
+  }
+
+  buscarProducto (termino: string) {
+
+    this.productosFiltrado = this.productos.filter( producto=> {
+
+      return true;
+    })
+
+    console.log( this.productosFiltrado );
 
   }
 
